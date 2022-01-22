@@ -9,7 +9,7 @@ import { Course } from '../model/course';
 })
 export class CoursesService {
 
-  private readonly API = '/assets/courses.json';
+  private readonly API = '/assets/acourses.json';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class CoursesService {
     return this.httpClient.get<Course[]>(this.API)
     .pipe(
       first(), //obtenho apenas a primeira resposta do servidor (lista de json)
-      delay(5000), // testando o spinner
+      //delay(5000), // testando o spinner
       tap(courses => console.log(courses))
     )
   }
