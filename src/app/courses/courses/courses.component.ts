@@ -1,4 +1,6 @@
+import { Course } from './../model/course';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-courses',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
+
+  courses: Course[] = [
+    { _id: '1', name: 'Angular', category: 'front'}
+  ];
+  displayedColumns = ['name', 'category']
 
   constructor() { }
 
